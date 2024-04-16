@@ -20,7 +20,7 @@ contract AcuEngine {
     }
 
     Auction[] public auctions;
-
+//auctions
     event AuctionCreated(
         uint index,
         string _item,
@@ -78,10 +78,8 @@ contract AcuEngine {
         uint discount = cAuction.discountRate * elapsed;
         return cAuction.startingPrice - discount;
     }
-    // function stop (uint index ){
-    //     Auction storage cAuction  = auctions[index];
-    //     cAuction.stopped = true;
-    // }
+
+
     function buy(uint index) external payable {
         Auction storage cAuction = auctions[index];
         require(!cAuction.stopped, "Stopped!");
